@@ -17,8 +17,8 @@ import {
 } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 
-extend({ MeshLineGeometry, MeshLineMaterial });
 useGLTF.preload(
+  extend({ MeshLineGeometry, MeshLineMaterial });
   "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/5huRVDzcoDwnbgrKUo1Lzs/53b6dd7d6b4ffcdbd338fa60265949e1/tag.glb",
 );
 useTexture.preload(
