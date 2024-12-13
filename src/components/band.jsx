@@ -16,7 +16,6 @@ import {
   useSphericalJoint,
 } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
-import { useControls } from "leva";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 useGLTF.preload(
@@ -27,16 +26,10 @@ useTexture.preload(
 );
 
 export default function Badge() {
-  const { debug } = useControls({ debug: false });
   return (
     <Canvas camera={{ position: [0, 0, 13], fov: 25 }}>
       <ambientLight intensity={Math.PI} />
-      <Physics
-        debug={debug}
-        interpolate
-        gravity={[0, -40, 0]}
-        timeStep={1 / 60}
-      >
+      <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
         <Band />
       </Physics>
       <Environment background blur={0.75}>
